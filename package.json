@@ -1,13 +1,20 @@
 {
+<<<<<<< HEAD
   "name": "tp2-booktracker",
   "version": "1.0.0",
   "main": "index.js",
+=======
+  "name": "pokemon-cli",
+  "version": "1.0.0",
+  "main": "tp.js",
+>>>>>>> 44d107a8e7e31b29aafd31d6af9d37e2211951cd
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+<<<<<<< HEAD
   "description": "",
   "dependencies": {
     "bcryptjs": "^3.0.3",
@@ -22,4 +29,13 @@
   "devDependencies": {
     "tailwindcss": "^4.1.17"
   }
+=======
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "inquirer": "^8.2.7",
+    "node-fetch": "^2.7.0",
+    "readline-sync": "^1.4.10"
+  },
+  "description": ""
+>>>>>>> 44d107a8e7e31b29aafd31d6af9d37e2211951cd
 }
