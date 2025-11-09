@@ -1,0 +1,80 @@
+doctype html
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Mes livres | BookTracker
+    style.
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #74ABE2, #5563DE);
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 50px;
+      }
+      .card {
+        background: white;
+        width: 700px;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      }
+      h2 { color: #333; margin-bottom: 1rem; text-align: center; }
+      a {
+        color: #5563DE;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      a:hover { text-decoration: underline; }
+      .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+      }
+      th, td {
+        border-bottom: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background: #5563DE;
+        color: white;
+      }
+      .logout {
+        display: block;
+        margin-top: 1rem;
+        text-align: right;
+      }
+
+  body
+    .card
+      .top-bar
+        h2 Mes livres
+        a(href="/books/add") ➕ Ajouter un livre
+      if books.length
+        table
+          thead
+            tr
+              th Titre
+              th Auteur
+              th Actions
+          tbody
+            each book in books
+              tr
+                td #{book.title}
+                td #{book.author}
+                td
+                  a(href=`/books/delete/${book._id}`) Supprimer
+      else
+        p Aucun livre trouvé.
+      .logout
+        a(href="/logout") Se déconnecter

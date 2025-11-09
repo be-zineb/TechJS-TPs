@@ -1,0 +1,58 @@
+doctype html
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Ajouter un livre | BookTracker
+    style.
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #74ABE2, #5563DE);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+      }
+      .card {
+        background: white;
+        width: 350px;
+        padding: 2.5rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        text-align: center;
+      }
+      h1 { color: #333; margin-bottom: 1rem; }
+      form { display: flex; flex-direction: column; gap: 1rem; }
+      input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 15px;
+        outline: none;
+        transition: 0.3s;
+      }
+      input:focus { border-color: #5563DE; box-shadow: 0 0 6px rgba(85,99,222,0.4); }
+      button {
+        background: #5563DE;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: 0.3s;
+      }
+      button:hover { background: #3d4dc9; }
+      a { color: #5563DE; text-decoration: none; font-weight: 600; }
+      a:hover { text-decoration: underline; }
+
+  body
+    .card
+      h1 Ajouter un livre
+      form(action="/books/add" method="POST")
+        input(type="text" name="title" placeholder="Titre du livre" required)
+        input(type="text" name="author" placeholder="Auteur" required)
+        button(type="submit") Ajouter
+      p
+        a(href="/books") ← Retour à la liste
