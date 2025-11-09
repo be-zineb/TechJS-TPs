@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Reading Tracker</title>
+  <script type="module" src="main.js" defer></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+  <h1 class="text-3xl font-bold mb-6 text-center text-blue-700"> Book Reading Tracker</h1>
+
+  <form id="bookForm" class="max-w-xl mx-auto bg-white p-6 rounded-2xl shadow-md space-y-4">
+    <input id="title" type="text" placeholder="Book Title" class="w-full p-2 border rounded" required />
+    <input id="author" type="text" placeholder="Author" class="w-full p-2 border rounded" required />
+    <input id="pages" type="number" placeholder="Total Pages" class="w-full p-2 border rounded" required />
+    <input id="pagesRead" type="number" placeholder="Pages Read" class="w-full p-2 border rounded" required />
+    <input id="price" type="number" placeholder="Price" class="w-full p-2 border rounded" required />
+
+    <select id="status" class="w-full p-2 border rounded">
+      <option>Read</option>
+      <option>Re-read</option>
+      <option>DNF</option>
+      <option>Currently reading</option>
+      <option>Returned Unread</option>
+      <option>Want to read</option>
+    </select>
+
+    <select id="format" class="w-full p-2 border rounded">
+      <option>Print</option>
+      <option>PDF</option>
+      <option>Ebook</option>
+      <option>AudioBook</option>
+    </select>
+
+    <input id="suggestedBy" type="text" placeholder="Suggested by" class="w-full p-2 border rounded" />
+
+    <button type="submit" class="bg-blue-600 text-white w-full py-2 rounded hover:bg-blue-700">Add Book</button>
+  </form>
+
+  <div id="bookList" class="max-w-4xl mx-auto mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+  <div id="stats" class="max-w-xl mx-auto mt-6 text-center text-gray-700 font-semibold"></div>
+</body>
+</html>
